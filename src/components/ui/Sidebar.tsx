@@ -1,4 +1,3 @@
-"use client"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -6,10 +5,11 @@ import { cn } from "@/lib/utils"
 import logo from "@/assets/logo_mcraulo.svg"
 
 // Iconos SVG para cada categoría
+
+
 const HamburgerIcon = () => (
-    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M22 13h-20c-.552 0-1-.447-1-1s.448-1 1-1h20c.552 0 1 .447 1 1s-.448 1-1 1zm0-4h-20c-.552 0-1-.447-1-1s.448-1 1-1h20c.552 0 1 .447 1 1s-.448 1-1 1zm0 8h-20c-.552 0-1-.447-1-1s.448-1 1-1h20c.552 0 1 .447 1 1s-.448 1-1 1z" />
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-burger"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 15h16a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+        <path d="M12 4c3.783 0 6.953 2.133 7.786 5h-15.572c.833 -2.867 4.003 -5 7.786 -5z" /><path d="M5 12h14" /></svg>
 )
 
 const FriesIcon = () => (
@@ -24,23 +24,7 @@ const DrinkIcon = () => (
     </svg>
 )
 
-const ComboIcon = () => (
-    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-    </svg>
-)
 
-const DessertIcon = () => (
-    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-    </svg>
-)
-
-const ExtrasIcon = () => (
-    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
-    </svg>
-)
 
 const UserIcon = () => (
     <img
@@ -73,6 +57,8 @@ const categories = [
 
 ]
 
+
+
 export function SideBar() {
     const [activeCategory, setActiveCategory] = useState<string>("")
 
@@ -98,10 +84,10 @@ export function SideBar() {
                 </div>
             </div>
 
-            {/* Header */}
-            <div className="p-4 border-b border-emerald-800 bg-red-950" >
-                <h2 className="text-lg font-semibold text-center">Menú</h2>
-                <p className="text-sm text-emerald-200 text-center mt-1">Selecciona una categoría</p>
+            {/* Header de categorias */}
+            <div className="p-4 bg-red-800" >
+                <h2 className="text-lg font-bold text-center">Menú</h2>
+                <p className="text-sm text-primary-foreground text-center mt-1">Selecciona una categoría</p>
             </div>
 
             {/* Categories */}
@@ -115,7 +101,7 @@ export function SideBar() {
                             key={category.id}
                             onClick={() => setActiveCategory(category.id)}
                             className={cn(
-                                "bg-white hover:bg-red-900 hover:text-white cursor-pointer w-full h-20 flex flex-col items-center justify-center gap-2 text-stone-900 font-semibold transition-all duration-200 transform hover:scale-105",
+                                "bg-white active:text-white active:bg-red-800 hover:bg-red-800 hover:text-white cursor-pointer w-full h-20 flex flex-col items-center justify-center gap-2 text-stone-900 font-semibold transition-all duration-150 transform hover:scale-105 active:scale-105",
                             )}
                         >
                             <IconComponent />
